@@ -9,7 +9,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         let testURL = URL(string: "receiver://test")!
         button.isEnabled = UIApplication.shared.canOpenURL(testURL)
-        print(randomStringOfLength(100))
     }
 
     @IBAction func transmit() {
@@ -20,11 +19,7 @@ class ViewController: UIViewController {
             showError("Failed to create the URL.")
             return
         }
-        UIApplication.shared.open(url, options: [:]) { [unowned self] success in
-            if !success {
-                self.showError("Failed to open the URL.")
-            }
-        }
+        UIApplication.shared.openURL(url)
     }
 
     private func showError(_ error: String) {

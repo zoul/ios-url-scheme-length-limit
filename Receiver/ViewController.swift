@@ -19,6 +19,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openTransmitter() {
-        UIApplication.shared.open(transmitterURL, options: [:])
+        UIApplication.shared.openURL(transmitterURL)
     }
 }
