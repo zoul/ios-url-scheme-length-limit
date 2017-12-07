@@ -14,7 +14,8 @@ class ViewController: UIViewController {
 
     func receiveURL(_ url: URL) {
         let payload = url.absoluteString.replacingOccurrences(of: "receiver://", with: "")
-        statusLabel.text = "Received \(payload.count) bytes."
+        let suffix = payload.count > 1 ? "s" : ""
+        statusLabel.text = "Received \(payload.count) byte\(suffix)."
     }
 
     @IBAction func openTransmitter() {
